@@ -1,4 +1,5 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require('path');
 
 /**
  * Webpack 配置对象
@@ -6,6 +7,11 @@ const ESLintPlugin = require('eslint-webpack-plugin');
  */
 const config = {
   mode: 'production',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   module: {
     rules: [
       {

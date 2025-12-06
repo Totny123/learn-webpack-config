@@ -1,4 +1,4 @@
-import { a } from './a.js';
+import { a } from '@/a.js';
 import { JSXDemo } from './jsx-demo.jsx';
 import { TSXDemo } from './tsx-demo.tsx';
 import { typescriptStr } from './ts-demo.ts';
