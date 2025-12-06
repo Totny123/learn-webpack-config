@@ -11,6 +11,7 @@ const config = {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   module: {
     rules: [
