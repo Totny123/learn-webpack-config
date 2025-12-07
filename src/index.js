@@ -7,6 +7,7 @@ import '@/less-demo.less';
 import styles from '@/scss-exports.scss';
 import vars from '@/less-vars.less';
 import React from 'react';
+import '@/common.js';
 const b = import('./b.js');
 
 console.log('feng', React);
