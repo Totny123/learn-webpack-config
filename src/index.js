@@ -3,8 +3,10 @@ import { JSXDemo } from './jsx-demo.jsx';
 import { TSXDemo } from './tsx-demo.tsx';
 import { typescriptStr } from './ts-demo.ts';
 import '@/scss-demo.scss';
+import styles from '@/scss-exports.scss';
 const b = import('./b.js');
 
+console.log('feng', styles);
 console.log(typescriptStr);
 console.log(JSXDemo);
 console.log(TSXDemo);
