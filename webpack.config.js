@@ -89,6 +89,7 @@ const config = {
     new HtmlWebpackPlugin(),
   ].filter(Boolean),
   optimization: {
+    moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
