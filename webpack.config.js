@@ -24,6 +24,10 @@ const getCSSLoaders = (loaders) => {
  */
 const config = {
   mode,
+  entry: {
+    index: './src/index.js',
+    admin: './src/admin.js',
+  },
   output: {
     filename: '[name].[contenthash].js',
   },
@@ -86,7 +90,8 @@ const config = {
     }),
     mode === 'production' &&
       new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({ filename: 'index.html', chunks: ['index'] }),
+    new HtmlWebpackPlugin({ filename: 'admin.html', chunks: ['admin'] }),
   ].filter(Boolean),
   optimization: {
     moduleIds: 'deterministic',
