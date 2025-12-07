@@ -6,8 +6,10 @@ import '@/scss-demo.scss';
 import '@/less-demo.less';
 import styles from '@/scss-exports.scss';
 import vars from '@/less-vars.less';
+import React from 'react';
 const b = import('./b.js');
 
+console.log('feng', React);
 console.log('feng', styles);
 console.log('feng vars', vars);
 console.log(typescriptStr);
