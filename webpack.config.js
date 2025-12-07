@@ -1,6 +1,7 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const mode = 'production';
 const getCSSLoaders = (loaders) => {
   return [
@@ -83,8 +84,10 @@ const config = {
     new ESLintPlugin({
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),
-    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
-  ],
+    mode === 'production' &&
+      new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+    new HtmlWebpackPlugin(),
+  ].filter(Boolean),
 };
 
 module.exports = config;
