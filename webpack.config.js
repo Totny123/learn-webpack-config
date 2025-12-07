@@ -88,6 +88,9 @@ const config = {
       new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin(),
   ].filter(Boolean),
+  optimization: {
+    runtimeChunk: 'single',
+  },
 };
 
 module.exports = config;
