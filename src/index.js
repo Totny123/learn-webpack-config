@@ -2,6 +2,7 @@ import { a } from '@/a.js';
 import { JSXDemo } from './jsx-demo.jsx';
 import { TSXDemo } from './tsx-demo.tsx';
 import { typescriptStr } from './ts-demo.ts';
+import '@/scss-demo.scss';
 const b = import('./b.js');
 
 console.log(typescriptStr);
