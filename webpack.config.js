@@ -29,6 +29,11 @@ const config = {
           },
           {
             loader: 'less-loader',
+            options: {
+              additionalData: `
+                @import "@/less-vars.less";
+              `,
+            },
           },
         ],
       },
