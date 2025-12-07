@@ -1,6 +1,21 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
 const path = require('path');
 
+const getCSSLoaders = (loaders) => {
+  return [
+    'style-loader',
+    {
+      loader: 'css-loader',
+      options: {
+        modules: {
+          compileType: 'icss',
+        },
+      },
+    },
+    ...loaders,
+  ];
+};
+
 /**
  * Webpack 配置对象
  * @type {import('webpack').Configuration}
@@ -17,16 +32,7 @@ const config = {
     rules: [
       {
         test: /\.less$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                compileType: 'icss',
-              },
-            },
-          },
+        use: getCSSLoaders([
           {
             loader: 'less-loader',
             options: {
@@ -35,7 +41,7 @@ const config = {
               `,
             },
           },
-        ],
+        ]),
       },
       {
         test: /\.[jt]sx?$/,
@@ -53,16 +59,7 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                compileType: 'icss',
-              },
-            },
-          },
+        use: getCSSLoaders([
           {
             loader: 'sass-loader',
             options: {
@@ -74,7 +71,7 @@ const config = {
               },
             },
           },
-        ],
+        ]),
       },
     ],
   },
