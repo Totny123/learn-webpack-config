@@ -3,6 +3,7 @@ import { JSXDemo } from './jsx-demo.jsx';
 import { TSXDemo } from './tsx-demo.tsx';
 import { typescriptStr } from './ts-demo.ts';
 import '@/scss-demo.scss';
+import '@/less-demo.less';
 import styles from '@/scss-exports.scss';
 const b = import('./b.js');
 

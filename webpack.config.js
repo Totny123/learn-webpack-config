@@ -16,6 +16,23 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.less$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                compileType: 'icss',
+              },
+            },
+          },
+          {
+            loader: 'less-loader',
+          },
+        ],
+      },
+      {
         test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: {
